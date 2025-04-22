@@ -4,6 +4,9 @@ const express = require("express")
 //importo la classe router
 const router = express.Router()
 
+//importo il controller di post
+const postController = require('../controllers/postController.js')
+
 //index
 router.get('/', (req, res) =>{
     res.send("Lista dei post")
