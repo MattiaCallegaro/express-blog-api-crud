@@ -5,7 +5,15 @@ const posts = require('../data/postsList.js')
 //index
 function index(req, res){
     //visualizzo la lista posts in formato json
-    res.json(posts)
+    // res.json(posts)`
+    const ingredient = req.query.ingredient;
+
+    let filteredPost = posts;
+
+    if(ingredient){
+        filteredPost = posts.filter((post)=> post.tags.includes(ingredient))
+    }
+    res.json(filteredPost)
 }
 
 //show
