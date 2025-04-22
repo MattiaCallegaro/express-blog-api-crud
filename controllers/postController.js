@@ -4,12 +4,17 @@ const posts = require('../data/postsList.js')
 
 //index
 function index(req, res){
+    //visualizzo la lista posts in formato json
     res.json(posts)
 }
 
 //show
 function show(req, res){
-    res.send(`Visualizzo il singolo post ${req.params.id}`)
+    const id = parseInt(req.params.id)
+//visualizzo il singolo post in base all'id
+    const post = posts.find(post => post.id === id)
+// console.log(id)
+    res.json(post)
 }
 
 //store
