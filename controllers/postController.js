@@ -1,9 +1,10 @@
-const posts = require('../app.js')
+//importo il file postList
+const posts = require('../data/postsList.js')
 
 
 //index
 function index(req, res){
-    res.send("Lista dei post")
+    res.json(posts)
 }
 
 //show
