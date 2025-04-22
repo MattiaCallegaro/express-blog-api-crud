@@ -18,7 +18,7 @@ Per iniziare, creiamo una cartella data in cui creare un file che contenga ed es
 Ora passiamo ad implementare le logiche delle nostre CRUD:
 Index dovrà restituire la lista dei post in formato JSON
 Show dovrà restituire un singolo post in formato JSON
-Destroy dovrà eliminare un singolo post dalla lista, stampare nel terminale (console.log) la lista aggiornata, e rispondere con uno stato 204 e nessun contenuto.
+Destroy dovrà eliminare un singolo post dalla lista, stampare nel terminale (console.log) la lista aggiornata, e rispondere con uno stato 204 e nessun contenuto
 
 ### Numero di push minimo: 10
 
