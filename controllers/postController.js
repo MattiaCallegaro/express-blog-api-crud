@@ -27,8 +27,27 @@ function show(req, res){
 
 //store
 function store(req, res){
-    console.log(req.body)
-    res.send("Creo un nuovo post")
+    //creo un nuovo id partendo dall'ultimo e incrementandolo
+    const newId = posts[posts.length -1].id +1
+
+    // creo un nuovo oggetto post
+    const newPost = {
+        title: newId,
+        content:req.body.content,
+        image:req.body.image,
+        tags:req.body.tags 
+    }
+
+    //aggiungo il nuovo post a postList
+    posts.push(newPost)
+    //controllo in console
+    console.log(posts)
+
+    //restituisco lo status
+    res.status(201)
+    //restituisco il post creato in json
+    res.json(newPost)
+
 }
 
 //update
