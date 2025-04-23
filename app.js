@@ -7,6 +7,9 @@ const app = express()
 //definisco la porta 
 const port = 3000
 
+//indico ad express di usare il body
+app.use(express.json());
+
 //definisco la rotta base
 app.get("/", (req, res) =>{
     res.send("Il mio blog")
@@ -37,7 +40,7 @@ app.get("/post", (req, res) =>{
           image: "/imgs/posts/cracker_barbabietola.jpeg",
           tags: ["Antipasti", "Ricette vegetariane", "Ricette al forno"],
         },
-        {
+        { 
           id: 3,
           title: "Pasta barbabietola e gorgonzola",
           content: `La nostra ricetta della pasta barbabietola e gorgonzola vuole ricreare in questo primo piatto un abbinamento appetitoso, già proposto con la torta salata alla barbabietola! Per un pranzo veloce ma gustoso, per chi ama giocare con consistenze e colori naturali in cucina, questa pasta è perfetta! La dolcezza della barbabietola smorza il gusto deciso che caratterizza questo formaggio erborinato molto amato, un'abbinata vincente e molto gustosa. Provate un nuovo condimento per la vostra pasta e sperimentate altre sfiziose varianti:
