@@ -72,9 +72,10 @@ function update(req, res){
     post.content = req.body.content
     post.image = req.body.image
     post.tags = req.body.tags
-
+    //contollo i posts in console
     console.log(posts)
-    
+    //mostro su postman il post aggiornato
+    res.json(post)
 }
 
 //modify
