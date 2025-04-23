@@ -43,7 +43,7 @@ function store(req, res){
     //controllo in console
     console.log(posts)
 
-    //restituisco lo status
+    //restituisco lo status 201 per le nuove risorse create
     res.status(201)
     //restituisco il post creato in json
     res.json(newPost)
@@ -52,7 +52,29 @@ function store(req, res){
 
 //update
 function update(req, res){
-    res.send(`Modifica totale del post ${req.params.id}`)
+    //recupero id e lo trasformo in numero
+    const id = parseInt(req.params.id)
+    //cerco il post tramite id
+    const post = posts.find(post => post.id === id)
+
+    //controllo se non trovo post restituisco status 404, errore e messaggio
+    if(!post){
+        res.status(404);
+        
+        return res.json({
+            error: "Not found",
+            message: "Post non trovato"
+        })
+    }
+
+    //aggiorno il post
+    post.title = req.body.title
+    post.content = req.body.content
+    post.image = req.body.image
+    post.tags = req.body.tags
+
+    console.log(posts)
+    
 }
 
 //modify
