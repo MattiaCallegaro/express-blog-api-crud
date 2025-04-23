@@ -27,6 +27,7 @@ const posts = [
             Tagliatelle alla barbabietola con asparagi`,
     image: "/imgs/posts/pasta_barbabietola.avif",
     tags: ["Primi piatti", "Ricette vegetariane"],
+    
   },
   {
     id: 4,
