@@ -74,7 +74,11 @@ app.get("/post", (req, res) =>{
 
 //importazione rotte
 const postsRouter = require("./routers/posts")
+//importata la rotta di notFound
+const notFound = require('./middlewares/notFound.js')
 app.use("/posts", postsRouter)
+//registro il middleware notFound a livello globale
+app.use(notFound)
 
 
 //metto in ascolto il server
