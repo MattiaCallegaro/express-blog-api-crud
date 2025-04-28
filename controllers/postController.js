@@ -56,7 +56,8 @@ function update(req, res){
     const id = parseInt(req.params.id)
     //cerco il post tramite id
     const post = posts.find(post => post.id === id)
-
+    //aggiungo un errore per testare
+    const posts ="Pippo"
     //controllo se non trovo post restituisco status 404, errore e messaggio
     if(!post){
         res.status(404);
